@@ -25,7 +25,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Pikko Games · Last updated 15 September 2026</p>
+<p class="updated">Pikko Games · Last updated 28 September 2026</p>
 
 <p>
   This policy covers all Pikko Games mobile apps. It explains what the apps
@@ -40,7 +40,9 @@
 </p>
 <p>
   The apps do show ads, and the ad provider (Google AdMob) uses an advertising
-  identifier. That is the only data leaving your device.
+  identifier. Some newer games (currently Ocean Drop) also send crash reports
+  and anonymous usage statistics through Google Firebase, so we can fix bugs.
+  Nothing else leaves your device.
 </p>
 
 <h2>What stays on your device</h2>
@@ -83,6 +85,35 @@
   uses information from sites or apps that use our services</a>.
 </p>
 
+<h2>Crash reports and usage statistics</h2>
+<p>
+  Ocean Drop uses Google Firebase Crashlytics and Google Analytics for Firebase.
+  If the game crashes, a crash report is sent so we can find and fix the
+  problem. The game also records simple gameplay events, such as a run starting
+  or ending, its score, or a power-up being used, so we can see which parts of
+  the game work and which do not.
+</p>
+<table>
+  <tr><th>Data</th><th>Purpose</th><th>Shared with</th></tr>
+  <tr>
+    <td>Crash logs and diagnostics (stack trace, device model, OS version, app version, the last in-game actions before the crash)</td>
+    <td>Finding and fixing bugs</td>
+    <td>Google Firebase Crashlytics</td>
+  </tr>
+  <tr>
+    <td>App interactions (game events such as scores and power-ups used) and an app-instance identifier</td>
+    <td>Understanding how the game is played, to improve it</td>
+    <td>Google Analytics for Firebase</td>
+  </tr>
+</table>
+<p>
+  This data is not linked to your name, email or any account, is not sold, and
+  is not used for advertising. Crash reports are kept for 90 days; analytics
+  events for up to 14 months. Google's handling is described in the
+  <a href="https://firebase.google.com/support/privacy">Firebase privacy
+  information</a>.
+</p>
+
 <h2>Your choices about ads</h2>
 <ul>
   <li>
@@ -117,9 +148,11 @@
 
 <h2>Data retention and deletion</h2>
 <p>
-  Because game data never leaves your device, uninstalling the app removes it
-  completely. There is no server-side account to delete. For the advertising
-  identifier, use the Android settings linked above.
+  Game data never leaves your device, so uninstalling the app removes it
+  completely. There is no server-side account to delete. Crash reports and
+  usage statistics are deleted automatically after the periods above; to ask
+  for earlier deletion, contact us. For the advertising identifier, use the
+  Android settings linked above.
 </p>
 
 <h2>Changes to this policy</h2>
