@@ -25,7 +25,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Pikko Games · Last updated 28 September 2026</p>
+<p class="updated">Pikko Games · Last updated 29 September 2026</p>
 
 <p>
   This policy covers all Pikko Games mobile apps. It explains what the apps
@@ -42,7 +42,9 @@
   The apps do show ads, and the ad provider (Google AdMob) uses an advertising
   identifier. Some newer games (currently Ocean Drop) also send crash reports
   and anonymous usage statistics through Google Firebase, so we can fix bugs.
-  Nothing else leaves your device.
+  Ocean Drop's daily ranking sends your Daily Jar score, with a random ID
+  that is not linked to you, so it can show where you placed. Nothing else
+  leaves your device.
 </p>
 
 <h2>What stays on your device</h2>
@@ -114,6 +116,29 @@
   information</a>.
 </p>
 
+<h2>Daily ranking (Ocean Drop)</h2>
+<p>
+  When you finish the day's Daily Jar for the first time, Ocean Drop sends that
+  one score so it can tell you where you placed among the day's players (for
+  example "top 18% today"). Other players never see your score, only the
+  counts used to rank it.
+</p>
+<table>
+  <tr><th>Data</th><th>Purpose</th><th>Shared with</th></tr>
+  <tr>
+    <td>Your Daily Jar score for that day and a random ID created by the app on your device</td>
+    <td>Showing your place in the day's ranking</td>
+    <td>Stored in Google Cloud Firestore (Google Firebase), in the EU</td>
+  </tr>
+</table>
+<p>
+  The random ID only makes sure each install posts one score per day. It is
+  not your advertising ID, device ID or any account, and it is not linked to
+  your name or email. Scores are deleted automatically after 30 days. The
+  ranking needs an internet connection; without one, nothing is sent and the
+  game works the same.
+</p>
+
 <h2>Your choices about ads</h2>
 <ul>
   <li>
@@ -148,10 +173,10 @@
 
 <h2>Data retention and deletion</h2>
 <p>
-  Game data never leaves your device, so uninstalling the app removes it
-  completely. There is no server-side account to delete. Crash reports and
-  usage statistics are deleted automatically after the periods above; to ask
-  for earlier deletion, contact us. For the advertising identifier, use the
+  Game data stays on your device, so uninstalling the app removes it
+  completely. There is no server-side account to delete. Daily ranking
+  scores, crash reports and usage statistics are deleted automatically after
+  the periods above; to ask for earlier deletion, contact us. For the advertising identifier, use the
   Android settings linked above.
 </p>
 
