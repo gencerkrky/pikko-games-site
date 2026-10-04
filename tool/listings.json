@@ -148,5 +148,15 @@
    "Dokuz Taş - Değirmen Oyunu",
    "Klasik Dokuz Taş, çevrimdışı. Bilgisayara karşı ya da iki kişi oyna."
   ]
+ },
+ "petek": {
+  "en-US": [
+   "Honeycomb: Hex Logic Puzzle",
+   "Logic puzzles on a honeycomb grid. Every puzzle is solvable without guessing."
+  ],
+  "tr-TR": [
+   "Honeycomb: Altıgen Mantık",
+   "Petek üzerinde mantık bulmacaları. Her bulmaca tahmin etmeden çözülür."
+  ]
  }
 }

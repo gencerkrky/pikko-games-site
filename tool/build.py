@@ -21,6 +21,7 @@ GAMES = {
         ('sudoku', True, 'Sudoku', 'Sudoku'),
         ('blockpuzzle', False, 'Block Puzzle', 'Blok Bulmaca'),
         ('oceandrop', False, 'Ocean Drop', 'Ocean Drop'),
+        ('petek', False, 'Honeycomb', 'Honeycomb'),
     ],
     'card': [
         ('hearts', False, 'Hearts', 'Kupa'),
