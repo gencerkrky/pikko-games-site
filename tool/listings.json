@@ -158,5 +158,15 @@
    "Honeycomb: Altıgen Mantık",
    "Petek üzerinde mantık bulmacaları. Her bulmaca tahmin etmeden çözülür."
   ]
+ },
+ "koy": {
+  "en-US": [
+   "Stack Village: Card Crafting",
+   "Stack cards to gather, craft and build a cozy village of cute Pikkos."
+  ],
+  "tr-TR": [
+   "Stack Village: Kartla Köy Kur",
+   "Kartları üst üste koy: topla, üret ve sevimli Pikko'lara bir köy kur."
+  ]
  }
 }

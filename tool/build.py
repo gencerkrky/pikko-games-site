@@ -40,6 +40,7 @@ GAMES = {
     'idle': [
         ('reef', False, 'Pikko Aquarium', 'Pikko Aquarium'),
         ('streetfood', False, 'Street Food Idle', 'Sokak Lezzetleri'),
+        ('koy', False, 'Stack Village', 'Stack Village'),
     ],
 }
 
