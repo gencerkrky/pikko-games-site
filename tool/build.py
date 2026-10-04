@@ -50,6 +50,8 @@ SECTIONS = {
 }
 
 YOUTUBE = 'https://www.youtube.com/@Pikko-Games'
+INSTAGRAM = 'https://www.instagram.com/pikko.games/'
+TIKTOK = 'https://www.tiktok.com/@pikkogames'
 EMAIL = 'gencerkrky@gmail.com'
 
 
@@ -88,7 +90,7 @@ def page():
       <ul class="games">{cards}
       </ul>
     </section>''')
-    return TEMPLATE.replace('{{SECTIONS}}', ''.join(sections)).replace('{{YOUTUBE}}', YOUTUBE) \
+    return TEMPLATE.replace('{{SECTIONS}}', ''.join(sections)).replace('{{YOUTUBE}}', YOUTUBE).replace('{{INSTAGRAM}}', INSTAGRAM).replace('{{TIKTOK}}', TIKTOK) \
         .replace('{{EMAIL}}', EMAIL).replace('{{COUNT}}', str(sum(len(g) for g in GAMES.values())))
 
 
@@ -198,6 +200,8 @@ TEMPLATE = '''<!doctype html>
 <footer>
   <div class="wrap">
     <nav>
+      <a href="{{INSTAGRAM}}" rel="noopener">Instagram</a>
+      <a href="{{TIKTOK}}" rel="noopener">TikTok</a>
       <a href="{{YOUTUBE}}" rel="noopener">YouTube</a>
       <a href="mailto:{{EMAIL}}"><span lang="en">Contact</span><span lang="tr">İletişim</span></a>
       <a href="privacy.html"><span lang="en">Privacy policy</span><span lang="tr">Gizlilik politikası</span></a>
