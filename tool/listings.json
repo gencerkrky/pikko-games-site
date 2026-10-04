@@ -1,0 +1,152 @@
+{
+ "sudoku": {
+  "en-US": [
+   "Sudoku - Offline Sudoku Game",
+   "Classic sudoku with daily puzzles. Plays offline, no subscription, no account."
+  ],
+  "tr-TR": [
+   "Sudoku - Günlük Bulmaca",
+   "Klasik sudoku, günlük bulmacalar. Çevrimdışı çalışır, abonelik yok."
+  ]
+ },
+ "blockpuzzle": {
+  "en-US": [
+   "Block Puzzle - Wood Block 9x9",
+   "Fair block puzzle on a 9x9 grid. Offline, free hold and undo, one-time IAP."
+  ],
+  "tr-TR": [
+   "Blok Bulmaca - Ahşap 9x9",
+   "9x9 dürüst blok bulmaca. Çevrimdışı, ücretsiz saklama ve geri alma, tek ödeme."
+  ]
+ },
+ "oceandrop": {
+  "en-US": [
+   "Ocean Drop: Sea Animal Merge",
+   "Drop cute sea animals, merge two of a kind and grow them into a whale!"
+  ],
+  "tr-TR": [
+   "Ocean Drop: Birleştirme Oyunu",
+   "Sevimli deniz canlılarını bırak, aynı ikiliyi birleştir, balinaya ulaş!"
+  ]
+ },
+ "reef": {
+  "en-US": [
+   "Pikko Aquarium: Idle Fish",
+   "A calm idle aquarium: collect 45 real fish, evolve them and decorate your reef."
+  ],
+  "tr-TR": [
+   "Pikko Aquarium: Balık Oyunu",
+   "Sakin bir boşta akvaryum: 45 gerçek balık topla, evrimleştir, resifini süsle."
+  ]
+ },
+ "streetfood": {
+  "en-US": [
+   "Street Food Idle: Cafe Tycoon",
+   "Build street food stalls, serve the rush, earn while you sleep."
+  ],
+  "tr-TR": [
+   "Sokak Lezzetleri: Kafe Tycoon",
+   "Sokak lezzeti tezgâhları kur, yoğun saati yetiştir, uyurken kazan."
+  ]
+ },
+ "spades": {
+  "en-US": [
+   "Spades - Offline Card Game",
+   "Classic Spades, offline. Fair AI that never sees your cards. Replay any deal."
+  ],
+  "tr-TR": [
+   "Spades - Kart Oyunu",
+   "Klasik Spades, çevrimdışı. Rakipler kartlarını görmez. Her el tekrar oynanır."
+  ]
+ },
+ "hearts": {
+  "en-US": [
+   "Hearts - Offline Card Game",
+   "Classic Hearts, offline. The AI can't see your cards. Replay any deal."
+  ],
+  "tr-TR": [
+   "Kupa - Çevrimdışı Kart Oyunu",
+   "Klasik Hearts, çevrimdışı. Yapay zekâ kartlarını göremez. Her el tekrar oynanır."
+  ]
+ },
+ "euchre": {
+  "en-US": [
+   "Euchre - Offline Card Game",
+   "Classic Euchre, offline. A new Daily Deal every day. Replay any deal."
+  ],
+  "tr-TR": [
+   "Euchre - Çevrimdışı Kart Oyunu",
+   "Klasik Euchre, çevrimdışı. Her gün yeni Günün Eli. Her el tekrar oynanır."
+  ]
+ },
+ "cribbage": {
+  "en-US": [
+   "Cribbage - Offline Card Game",
+   "Cribbage offline. The computer cannot see your hand. Every deal replayable."
+  ],
+  "tr-TR": [
+   "Cribbage - Çevrimdışı Oyun",
+   "Çevrimdışı Cribbage. Bilgisayar elini göremez. Her dağıtım tekrar oynanır."
+  ]
+ },
+ "belote": {
+  "en-US": [
+   "Belote - Offline Card Game",
+   "Classic French Belote, offline. A Daily Deal every day. Replay any deal."
+  ],
+  "tr-TR": [
+   "Belote - Çevrimdışı Kart Oyunu",
+   "Klasik Fransız Belote, çevrimdışı. Her gün yeni dağıtım, her el tekrar oynanır."
+  ]
+ },
+ "canasta": {
+  "en-US": [
+   "Canasta - Offline Card Game",
+   "Classic partnership Canasta, offline. Fair deals and a partner who plays well."
+  ],
+  "tr-TR": [
+   "Kanasta: Çevrimdışı Kart Oyunu",
+   "Klasik eşli Kanasta, çevrimdışı. Adil dağıtım ve akıllı bir ortak."
+  ]
+ },
+ "skat": {
+  "en-US": [
+   "Skat - Offline Card Game",
+   "Classic three-player Skat, offline. International rules and a Daily Deal."
+  ],
+  "tr-TR": [
+   "Skat - Çevrimdışı Kart Oyunu",
+   "Üç kişilik klasik Skat, çevrimdışı. Uluslararası kurallar, günün dağıtımı."
+  ]
+ },
+ "ginrummy": {
+  "en-US": [
+   "Gin Rummy - Offline Card Game",
+   "Classic two-player Gin Rummy, offline. Knock, gin, undercut. A Daily Deal."
+  ],
+  "tr-TR": [
+   "Gin Rummy - Çevrimdışı Kart",
+   "İki kişilik klasik Gin Rummy, çevrimdışı. Kapat, gin yap. Günün dağıtımı."
+  ]
+ },
+ "mancala": {
+  "en-US": [
+   "Mancala - Offline Board Game",
+   "Classic Kalah, offline. Play the computer or a friend, and watch every stone."
+  ],
+  "tr-TR": [
+   "Mangala - Çevrimdışı Kalah",
+   "Klasik Kalah, çevrimdışı. Bilgisayara karşı ya da bir arkadaşınla oyna."
+  ]
+ },
+ "morris": {
+  "en-US": [
+   "Nine Men's Morris - Offline",
+   "The classic mill game, offline. Play the computer or a friend on one phone."
+  ],
+  "tr-TR": [
+   "Dokuz Taş - Değirmen Oyunu",
+   "Klasik Dokuz Taş, çevrimdışı. Bilgisayara karşı ya da iki kişi oyna."
+  ]
+ }
+}
