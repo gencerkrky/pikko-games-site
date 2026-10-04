@@ -64,7 +64,7 @@ def card(key, live, name_en, name_tr):
     desc_tr = lst.get('tr-TR', lst['en-US'])[1]
     url = f'https://play.google.com/store/apps/details?id=com.pikkogames.{key}'
     if live:
-        action = f'<a class="btn" href="{url}" rel="noopener">{t("Get it on Google Play", "Google Play’de al")}</a>'
+        action = f'<a class="btn" href="{url}" rel="noopener">{t("Free download", "Ücretsiz indir")}</a>'
     else:
         action = f'<span class="soon">{t("Coming soon", "Yakında")}</span>'
     return f'''
