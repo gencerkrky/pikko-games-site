@@ -36,6 +36,7 @@ GAMES = {
     'board': [
         ('mancala', False, 'Mancala', 'Mangala'),
         ('morris', False, "Nine Men's Morris", 'Dokuz Taş'),
+        ('fetih', False, 'Conquest Isles', 'Conquest Isles'),
     ],
     'idle': [
         ('reef', False, 'Pikko Aquarium', 'Pikko Aquarium'),

@@ -168,5 +168,15 @@
    "Stack Village: Kartla Köy Kur",
    "Kartları üst üste koy: topla, üret ve sevimli Pikko'lara bir köy kur."
   ]
+ },
+ "fetih": {
+  "en-US": [
+   "Conquest Isles: Territory War",
+   "Offline island conquest strategy with fair luck and an AI that never cheats."
+  ],
+  "tr-TR": [
+   "Conquest Isles: Bölge Savaşı",
+   "Çevrimdışı ada fethi: adil şans, asla hile yapmayan bir yapay zekâ."
+  ]
  }
 }
