@@ -19,6 +19,7 @@ LISTINGS = json.loads((ROOT / 'tool' / 'listings.json').read_text(encoding='utf-
 GAMES = {
     'puzzle': [
         ('sudoku', True, 'Sudoku', 'Sudoku'),
+        ('killersudoku', False, 'Killer Sudoku', 'Killer Sudoku'),
         ('blockpuzzle', False, 'Block Puzzle', 'Blok Bulmaca'),
         ('oceandrop', False, 'Ocean Drop', 'Ocean Drop'),
         ('petek', False, 'Honeycomb', 'Honeycomb'),

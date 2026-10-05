@@ -178,5 +178,15 @@
    "Conquest Isles: Bölge Savaşı",
    "Çevrimdışı ada fethi: adil şans, asla hile yapmayan bir yapay zekâ."
   ]
+ },
+ "killersudoku": {
+  "en-US": [
+   "Killer Sudoku - Offline Puzzle",
+   "Cage sums, one solution, hints that explain the next logical step."
+  ],
+  "tr-TR": [
+   "Killer Sudoku - Toplam Bulmaca",
+   "Kafes toplamları, tek çözüm ve bir sonraki adımı gerekçesiyle anlatan ipuçları."
+  ]
  }
 }
