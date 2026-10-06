@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pikko Arena invite</title>
+<meta name="description" content="Your friend invites you to a 2v2 match in Pikko Arena.">
+<meta property="og:title" content="Join my 2v2 match in Pikko Arena">
+<meta property="og:description" content="Tap to join the lobby. If you don't have the game yet, it opens the store first.">
+<meta property="og:image" content="https://gencerkrky.github.io/pikko-games-site/arena/hero.png">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/favicon.png">
+<style>
+  :root { --bg: #12151c; --panel: #1c212b; --ink: #ede6d6; --muted: #9b9483; --gold: #f0b84a; --line: #323a4a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; display: grid; place-items: center; padding: 24px 16px; }
+  main { width: 100%; max-width: 420px; background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 28px 22px; text-align: center; }
+  img { width: 140px; height: 140px; }
+  h1 { font-size: 24px; margin: 8px 0 4px; }
+  p { color: var(--muted); margin: 0 0 18px; }
+  .code { font-size: 38px; font-weight: 900; letter-spacing: 8px; color: var(--gold); margin: 6px 0 20px; }
+  a.btn { display: block; padding: 14px; border-radius: 12px; font-weight: 800; text-decoration: none; margin-top: 10px; }
+  .primary { background: var(--gold); color: #2a1e05; }
+  .ghost { border: 2px solid var(--line); color: var(--ink); }
+  small { display: block; color: var(--muted); margin-top: 16px; }
+</style>
+</head>
+<body>
+<main>
+  <img src="hero.png" alt="">
+  <h1 id="t">Join my 2v2 match</h1>
+  <p id="s">Pikko Arena · auto battler</p>
+  <div class="code" id="code">······</div>
+  <a class="btn primary" id="open" href="#">Open the game</a>
+  <a class="btn ghost" id="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.arena">Get it on Google Play</a>
+  <small id="h">No game yet? Install it, open it, and you'll land in the lobby.</small>
+</main>
+<script>
+  // The code is six letters/digits from an alphabet without look-alikes.
+  var c = (new URLSearchParams(location.search).get('c') || '').toUpperCase();
+  if (!/^[ABCDEFGHJKMNPQRSTUVWXYZ23456789]{6}$/.test(c)) c = '';
+  var tr = (navigator.language || '').toLowerCase().indexOf('tr') === 0;
+  if (tr) {
+    document.documentElement.lang = 'tr';
+    document.getElementById('t').textContent = '2v2 maçıma katıl';
+    document.getElementById('open').textContent = 'Oyunu aç';
+    document.getElementById('store').textContent = "Google Play'den indir";
+    document.getElementById('h').textContent = 'Oyun yüklü değilse: indir, aç; doğrudan lobiye girersin.';
+  }
+  document.getElementById('code').textContent = c || '——';
+  // Play keeps `referrer` through the install; the game reads it on first
+  // launch (Install Referrer API) and opens this lobby.
+  var store = 'https://play.google.com/store/apps/details?id=com.pikkogames.arena' + (c ? '&referrer=' + encodeURIComponent('lobby=' + c) : '');
+  document.getElementById('store').href = store;
+  var android = /android/i.test(navigator.userAgent);
+  // Android: an intent opens the game if installed, otherwise follows the
+  // fallback to the store (with the code in the referrer).
+  var open = android
+    ? 'intent://join?c=' + c + '#Intent;scheme=pikkoarena;package=com.pikkogames.arena;S.browser_fallback_url=' + encodeURIComponent(store) + ';end'
+    : 'pikkoarena://join?c=' + c;
+  document.getElementById('open').href = open;
+  if (android && c) location.href = open;
+</script>
+</body>
+</html>
