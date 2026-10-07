@@ -2,11 +2,11 @@
 
     python tool/build.py
 
-When a game reaches production on Google Play, set its `live` to True and
-rebuild: the card then links to the store instead of saying "Coming soon".
-Until then the link would be a 404 for everyone outside the closed test.
-listings.json holds each game's Play title and short description (en-US,
-tr-TR), pulled from the Play API, so the site says what the store says.
+Run tool/sync_listings.py first: it refreshes listings.json from the Play
+API with each game's title, short description (en-US, tr-TR), language count
+and whether it is live. Live games are listed first and link to the store;
+the rest say "Coming soon", because their store link is a 404 for everyone
+outside the closed test.
 """
 import html
 import json
@@ -15,34 +15,34 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 LISTINGS = json.loads((ROOT / 'tool' / 'listings.json').read_text(encoding='utf-8'))
 
-# (key, live on Google Play, EN short name, TR short name)
+# (key, EN short name, TR short name); live status comes from listings.json
 GAMES = {
     'puzzle': [
-        ('sudoku', True, 'Sudoku', 'Sudoku'),
-        ('killersudoku', False, 'Killer Sudoku', 'Killer Sudoku'),
-        ('blockpuzzle', False, 'Block Puzzle', 'Blok Bulmaca'),
-        ('oceandrop', False, 'Ocean Drop', 'Ocean Drop'),
-        ('petek', False, 'Honeycomb', 'Honeycomb'),
+        ('sudoku', 'Sudoku', 'Sudoku'),
+        ('killersudoku', 'Killer Sudoku', 'Killer Sudoku'),
+        ('blockpuzzle', 'Wood Block Puzzle', 'Ahşap Blok Bulmaca'),
+        ('oceandrop', 'Ocean Drop', 'Ocean Drop'),
+        ('petek', 'Honeycomb', 'Honeycomb'),
     ],
     'card': [
-        ('hearts', False, 'Hearts', 'Kupa'),
-        ('spades', False, 'Spades', 'Spades'),
-        ('euchre', False, 'Euchre', 'Euchre'),
-        ('cribbage', False, 'Cribbage', 'Cribbage'),
-        ('belote', False, 'Belote', 'Belote'),
-        ('canasta', False, 'Canasta', 'Kanasta'),
-        ('skat', False, 'Skat', 'Skat'),
-        ('ginrummy', False, 'Gin Rummy', 'Gin Rummy'),
+        ('hearts', 'Hearts', 'Hearts'),
+        ('spades', 'Spades', 'Spades'),
+        ('euchre', 'Euchre', 'Euchre'),
+        ('cribbage', 'Cribbage', 'Cribbage'),
+        ('belote', 'Belote', 'Belote'),
+        ('canasta', 'Canasta', 'Kanasta'),
+        ('skat', 'Skat', 'Skat'),
+        ('ginrummy', 'Gin Rummy', 'Gin Rummy'),
     ],
     'board': [
-        ('mancala', False, 'Mancala', 'Mangala'),
-        ('morris', False, "Nine Men's Morris", 'Dokuz Taş'),
-        ('fetih', False, 'Conquest Isles', 'Conquest Isles'),
+        ('mancala', 'Mancala', 'Mangala'),
+        ('morris', "Nine Men's Morris", 'Dokuz Taş'),
+        ('fetih', 'Conquest Isles', 'Conquest Isles'),
     ],
     'idle': [
-        ('reef', False, 'Pikko Aquarium', 'Pikko Aquarium'),
-        ('streetfood', False, 'Street Food Idle', 'Sokak Lezzetleri'),
-        ('koy', False, 'Stack Village', 'Stack Village'),
+        ('reef', 'Pikko Aquarium', 'Pikko Aquarium'),
+        ('streetfood', 'Street Food Idle', 'Sokak Lezzetleri'),
+        ('koy', 'Stack Village', 'Stack Village'),
     ],
 }
 
@@ -57,6 +57,7 @@ YOUTUBE = 'https://www.youtube.com/@Pikko-Games'
 INSTAGRAM = 'https://www.instagram.com/pikko.games/'
 TIKTOK = 'https://www.tiktok.com/@pikkogames'
 EMAIL = 'gencerkrky@gmail.com'
+DEV_PAGE = 'https://play.google.com/store/apps/dev?id=9129837121616282538'
 
 # Brand marks from simple-icons (CC0), inlined so the page has no extra requests.
 ICON_PATHS = {
@@ -79,12 +80,16 @@ def t(en, tr):
     return f'<span lang="en">{html.escape(en)}</span><span lang="tr">{html.escape(tr)}</span>'
 
 
-def card(key, live, name_en, name_tr):
+def live(key):
+    return LISTINGS.get(key, {}).get('live', False)
+
+
+def card(key, name_en, name_tr):
     lst = LISTINGS[key]
     desc_en = lst['en-US'][1]
     desc_tr = lst.get('tr-TR', lst['en-US'])[1]
     url = f'https://play.google.com/store/apps/details?id=com.pikkogames.{key}'
-    if live:
+    if live(key):
         action = f'<a class="btn" href="{url}" rel="noopener">{t("Free download", "Ücretsiz indir")}</a>'
     else:
         action = f'<span class="soon">{t("Coming soon", "Yakında")}</span>'
@@ -99,18 +104,33 @@ def card(key, live, name_en, name_tr):
       </li>'''
 
 
-def page():
-    sections = []
-    for sid, games in GAMES.items():
-        cards = ''.join(card(*g) for g in games)
-        sections.append(f'''
+def section(title, games, extra=''):
+    cards = ''.join(card(*g) for g in games)
+    return f'''
     <section>
-      <h2>{t(*SECTIONS[sid])}</h2>
+      <h2>{t(*title)}</h2>
       <ul class="games">{cards}
-      </ul>
-    </section>''')
+      </ul>{extra}
+    </section>'''
+
+
+def page():
+    # What a visitor can install today comes first; the rest wait by category.
+    now = [g for games in GAMES.values() for g in games if live(g[0])]
+    sections = []
+    if now:
+        more = f'''
+      <p class="all"><a class="btn ghost" href="{DEV_PAGE}" rel="noopener">{t("All our games on Google Play", "Tüm oyunlarımız Google Play'de")}</a></p>'''
+        sections.append(section(('Now on Google Play', "Şimdi Google Play'de"), now, more))
+    for sid, games in GAMES.items():
+        soon = [g for g in games if not live(g[0])]
+        if soon:
+            sections.append(section((f'{SECTIONS[sid][0]} · coming soon', f'{SECTIONS[sid][1]} · yakında'), soon))
+    total = sum(len(g) for g in GAMES.values())
+    langs = max(v.get('languages', 0) for v in LISTINGS.values())
     return TEMPLATE.replace('{{SECTIONS}}', ''.join(sections)).replace('{{YOUTUBE}}', YOUTUBE).replace('{{INSTAGRAM}}', INSTAGRAM).replace('{{TIKTOK}}', TIKTOK).replace('{{SOCIAL}}', socials()) \
-        .replace('{{EMAIL}}', EMAIL).replace('{{COUNT}}', str(sum(len(g) for g in GAMES.values())))
+        .replace('{{EMAIL}}', EMAIL).replace('{{LIVE}}', str(len(now))).replace('{{SOON}}', str(total - len(now))) \
+        .replace('{{LANGS}}', str(langs)).replace('{{DEV}}', DEV_PAGE)
 
 
 TEMPLATE = '''<!doctype html>
@@ -193,6 +213,9 @@ TEMPLATE = '''<!doctype html>
     font-weight: 700; font-size: .88rem; padding: .45rem .9rem; border-radius: 999px;
   }
   .btn:hover { filter: brightness(1.08); }
+  .ghost { background: transparent; color: var(--brand); border: 2px solid var(--brand); }
+  .ghost:hover { background: var(--brand); color: var(--brand-ink); filter: none; }
+  .all { text-align: center; margin: 1.25rem 0 0; }
   .soon { display: inline-block; background: var(--chip); color: var(--muted); font-weight: 600; font-size: .85rem; padding: .4rem .85rem; border-radius: 999px; }
   footer { border-top: 1px solid var(--line); padding: 2rem 0 3rem; text-align: center; color: var(--muted); font-size: .92rem; }
   footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.5rem; margin-bottom: .75rem; }
@@ -214,10 +237,11 @@ TEMPLATE = '''<!doctype html>
     <h1><span lang="en">Calm, fair card, board and puzzle games</span><span lang="tr">Sakin ve adil kart, tahta ve bulmaca oyunları</span></h1>
     <p><span lang="en">Made for Android. Clear rules, computer opponents that play fair, and no account to create.</span><span lang="tr">Android için. Kurallar açık, bilgisayar rakipler hile yapmaz, hesap açman gerekmez.</span></p>
     <ul class="facts">
-      <li><span lang="en">{{COUNT}} games</span><span lang="tr">{{COUNT}} oyun</span></li>
+      <li><span lang="en">{{LIVE}} games on Google Play</span><span lang="tr">Google Play'de {{LIVE}} oyun</span></li>
+      <li><span lang="en">{{SOON}} more coming</span><span lang="tr">{{SOON}} oyun yolda</span></li>
       <li><span lang="en">Plays offline</span><span lang="tr">İnternetsiz oynanır</span></li>
       <li><span lang="en">No subscriptions</span><span lang="tr">Abonelik yok</span></li>
-      <li><span lang="en">6+ languages</span><span lang="tr">6+ dil</span></li>
+      <li><span lang="en">Up to {{LANGS}} languages</span><span lang="tr">{{LANGS}} dile kadar</span></li>
     </ul>
     <div class="social">{{SOCIAL}}</div>
   </div>
@@ -231,6 +255,7 @@ TEMPLATE = '''<!doctype html>
       <a href="{{TIKTOK}}" rel="noopener">TikTok</a>
       <a href="{{YOUTUBE}}" rel="noopener">YouTube</a>
       <a href="mailto:{{EMAIL}}"><span lang="en">Contact</span><span lang="tr">İletişim</span></a>
+      <a href="{{DEV}}" rel="noopener">Google Play</a>
       <a href="privacy.html"><span lang="en">Privacy policy</span><span lang="tr">Gizlilik politikası</span></a>
     </nav>
     <div>© 2026 Pikko Games</div>
