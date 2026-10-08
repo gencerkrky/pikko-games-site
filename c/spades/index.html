@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'sha256-jEEC2TBAfvtonyLpVtHQfi8YKEbLuw7Xp/nhQXSyBTk='; script-src 'sha256-OOTRlyplaGnVqGyHn86S++kzP06qo3xr9mCMwhpTQNs='; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>Spades challenge - Pikko Games</title>
+<meta name="description" content="A Spades challenge from a friend. Play the same game and try to beat their score.">
+<meta property="og:title" content="Spades: you have been challenged">
+<meta property="og:description" content="Same game, same start. Your turn.">
+<meta property="og:image" content="https://gencerkrky.github.io/pikko-games-site/assets/icons/spades.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="/pikko-games-site/assets/favicon.png">
+<style>:root{--bg:#f6f3ff;--bg2:#e6e0ff;--card:#fff;--ink:#161b48;--muted:#5d5f80;--brand:#5a4ad0;--brand-ink:#fff;--line:#d9d2fa}
+@media (prefers-color-scheme:dark){:root{--bg:#12132a;--bg2:#1d1b40;--card:#1c1d3a;--ink:#eceaff;--muted:#b4b3d6;--brand:#9d90ff;--brand-ink:#10112a;--line:#34336a}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--ink);background:linear-gradient(180deg,var(--bg),var(--bg2)) fixed;font:16px/1.5 "Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px}
+main{width:100%;max-width:26rem;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px 20px;text-align:center}
+.icon{width:96px;height:96px;border-radius:22px;display:block;margin:0 auto 12px}
+.game{margin:0;color:var(--muted);font-size:.95rem;font-weight:600}
+h1{margin:.25rem 0 .75rem;font-size:1.5rem;line-height:1.25}
+.score{margin:0 0 .5rem;font-size:1.25rem;font-weight:700}
+.same{margin:0 0 1.25rem;color:var(--muted)}
+.btn{display:block;width:100%;padding:14px 16px;margin:10px 0 0;border-radius:14px;font-weight:700;text-decoration:none;border:2px solid var(--brand)}
+.primary{background:var(--brand);color:var(--brand-ink)}
+.secondary{background:transparent;color:var(--ink)}
+.btn:focus-visible,footer a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.note{margin:1rem 0 0;color:var(--muted);font-size:.9rem}
+footer{margin-top:1.25rem;font-size:.9rem}
+footer a{color:var(--muted)}
+[hidden]{display:none!important}</style>
+</head>
+<body>
+<main>
+<img class="icon" src="/pikko-games-site/assets/icons/spades.png" width="96" height="96" alt="">
+<p class="game" id="game">Spades</p>
+<h1 id="title">You've been challenged</h1>
+<p class="score" id="score" hidden></p>
+<p class="same" id="same" hidden></p>
+<a class="btn primary" id="open" href="#" hidden>Open in the app</a>
+<a class="btn secondary" id="play" href="https://play.google.com/store/apps/details?id=com.pikkogames.spades&amp;referrer=utm_source%3Dpikko_share%26utm_medium%3Dinvite%26utm_campaign%3Dcom.pikkogames.spades%26utm_content%3Dspades" rel="noopener">Get it on Google Play</a>
+<p class="note" id="note"></p>
+<footer><a id="more" href="/pikko-games-site/">More Pikko games</a></footer>
+</main>
+<script type="application/json" id="cfg">{"game":"spades","pkg":"com.pikkogames.spades","name":{"en":"Spades"},"appStore":"","host":"gencerkrky.github.io","path":"/pikko-games-site/c/spades"}</script>
+<script type="application/json" id="strings">{"en":{"challenge":"You've been challenged","result":"Can you beat this?","invite":"Come play {game}","beat":"Beat my score: {score}","same":"Same game, same start. Your turn.","open":"Open in the app","play":"Get it on Google Play","hint":"Don't have the game yet? Install it from Google Play, then come back and tap “Open in the app”.","ios":"This game is on Android for now.","desktop":"Open this link on your Android phone to play.","more":"More Pikko games"},"tr":{"challenge":"Sana meydan okundu","result":"Bunu geçebilir misin?","invite":"Gel, {game} oynayalım","beat":"Skorumu geç: {score}","same":"Aynı oyun, aynı başlangıç. Sıra sende.","open":"Uygulamada aç","play":"Google Play'den indir","hint":"Oyun sende yok mu? Google Play'den yükle, sonra buraya dönüp “Uygulamada aç” düğmesine dokun.","ios":"Bu oyun şimdilik Android'de.","desktop":"Oynamak için bu linki Android telefonunda aç.","more":"Diğer Pikko oyunları"},"de":{"challenge":"Du wurdest herausgefordert","result":"Schaffst du das besser?","invite":"Spiel {game} mit mir","beat":"Schlag meinen Punktestand: {score}","same":"Gleiches Spiel, gleicher Start. Du bist dran.","open":"In der App öffnen","play":"Bei Google Play laden","hint":"Du hast das Spiel noch nicht? Installiere es über Google Play, komm dann zurück und tippe auf „In der App öffnen“.","ios":"Dieses Spiel gibt es derzeit für Android.","desktop":"Öffne diesen Link auf deinem Android-Smartphone, um zu spielen.","more":"Weitere Pikko-Spiele"},"es":{"challenge":"¡Te han retado!","result":"¿Puedes superarlo?","invite":"Ven a jugar a {game}","beat":"Supera mi puntuación: {score}","same":"Misma partida, mismo comienzo. Te toca.","open":"Abrir en la app","play":"Descárgalo en Google Play","hint":"¿Aún no tienes el juego? Instálalo desde Google Play, vuelve y toca «Abrir en la app».","ios":"Por ahora este juego está en Android.","desktop":"Abre este enlace en tu teléfono Android para jugar.","more":"Más juegos de Pikko"},"fr":{"challenge":"On te lance un défi","result":"Peux-tu faire mieux ?","invite":"Viens jouer à {game}","beat":"Bats mon score : {score}","same":"Même partie, même départ. À toi de jouer.","open":"Ouvrir dans l'appli","play":"Disponible sur Google Play","hint":"Tu n'as pas encore le jeu ? Installe-le depuis Google Play, puis reviens et touche « Ouvrir dans l'appli ».","ios":"Pour l'instant, ce jeu est sur Android.","desktop":"Ouvre ce lien sur ton téléphone Android pour jouer.","more":"Autres jeux Pikko"},"pt":{"challenge":"Você foi desafiado","result":"Consegue fazer melhor?","invite":"Venha jogar {game}","beat":"Supere minha pontuação: {score}","same":"Mesma partida, mesmo começo. Sua vez.","open":"Abrir no app","play":"Baixe no Google Play","hint":"Ainda não tem o jogo? Instale pelo Google Play, depois volte e toque em “Abrir no app”.","ios":"Por enquanto, este jogo está no Android.","desktop":"Abra este link no seu celular Android para jogar.","more":"Mais jogos Pikko"},"it":{"challenge":"Hai ricevuto una sfida","result":"Riesci a fare meglio?","invite":"Vieni a giocare a {game}","beat":"Batti il mio punteggio: {score}","same":"Stessa partita, stesso inizio. Tocca a te.","open":"Apri nell'app","play":"Scarica da Google Play","hint":"Non hai ancora il gioco? Installalo da Google Play, poi torna qui e tocca “Apri nell'app”.","ios":"Per ora questo gioco è su Android.","desktop":"Apri questo link sul tuo telefono Android per giocare.","more":"Altri giochi Pikko"},"ru":{"challenge":"Тебе бросили вызов","result":"Сможешь лучше?","invite":"Сыграй в {game}","beat":"Побей мой счёт: {score}","same":"Та же игра, тот же старт. Твой ход.","open":"Открыть в приложении","play":"Скачать в Google Play","hint":"Игры ещё нет? Установи её из Google Play, вернись сюда и нажми «Открыть в приложении».","ios":"Пока эта игра доступна на Android.","desktop":"Открой эту ссылку на Android-телефоне, чтобы играть.","more":"Другие игры Pikko"},"pl":{"challenge":"Rzucono ci wyzwanie","result":"Dasz radę lepiej?","invite":"Zagraj w {game}","beat":"Pobij mój wynik: {score}","same":"Ta sama gra, ten sam start. Twoja kolej.","open":"Otwórz w aplikacji","play":"Pobierz z Google Play","hint":"Nie masz jeszcze gry? Zainstaluj ją z Google Play, wróć tutaj i dotknij „Otwórz w aplikacji”.","ios":"Na razie ta gra jest dostępna na Androida.","desktop":"Otwórz ten link na telefonie z Androidem, aby zagrać.","more":"Więcej gier Pikko"},"ja":{"challenge":"挑戦状が届きました","result":"これを超えられる？","invite":"{game}で遊ぼう","beat":"私のスコアを超えて：{score}","same":"同じゲーム、同じスタート。あなたの番です。","open":"アプリで開く","play":"Google Playで入手","hint":"まだゲームをお持ちでない場合は、Google Playからインストールしてからここに戻り、「アプリで開く」をタップしてください。","ios":"このゲームは現在Androidで配信中です。","desktop":"Androidスマートフォンでこのリンクを開いてプレイしてください。","more":"Pikkoのほかのゲーム"},"ko":{"challenge":"도전장이 도착했어요","result":"이 기록을 넘을 수 있나요?","invite":"{game} 함께해요","beat":"내 점수를 넘어 보세요: {score}","same":"같은 게임, 같은 시작. 이제 당신 차례예요.","open":"앱에서 열기","play":"Google Play에서 받기","hint":"아직 게임이 없나요? Google Play에서 설치한 뒤 돌아와서 '앱에서 열기'를 누르세요.","ios":"이 게임은 현재 Android에서 제공됩니다.","desktop":"Android 휴대폰에서 이 링크를 열어 플레이하세요.","more":"Pikko의 다른 게임"},"nl":{"challenge":"Je bent uitgedaagd","result":"Kun jij dit verbeteren?","invite":"Speel {game} mee","beat":"Versla mijn score: {score}","same":"Zelfde spel, zelfde start. Jij bent aan de beurt.","open":"Openen in de app","play":"Ontdek het op Google Play","hint":"Heb je het spel nog niet? Installeer het via Google Play, kom terug en tik op 'Openen in de app'.","ios":"Dit spel is voorlopig op Android.","desktop":"Open deze link op je Android-telefoon om te spelen.","more":"Meer Pikko-spellen"},"id":{"challenge":"Kamu ditantang","result":"Bisa lebih baik?","invite":"Ayo main {game}","beat":"Kalahkan skorku: {score}","same":"Permainan sama, awal sama. Giliranmu.","open":"Buka di aplikasi","play":"Dapatkan di Google Play","hint":"Belum punya gamenya? Pasang dari Google Play, lalu kembali ke sini dan ketuk “Buka di aplikasi”.","ios":"Untuk saat ini game ini ada di Android.","desktop":"Buka tautan ini di ponsel Android untuk bermain.","more":"Game Pikko lainnya"}}</script>
+<script>(function () {
+  var C = JSON.parse(document.getElementById('cfg').textContent);
+  var S = JSON.parse(document.getElementById('strings').textContent);
+  var MAX_SEED = 281474976710655, MAX_SCORE = 999999999, MAX_LINK = 2048;
+  var MAX_SEED_CHARS = 10, MAX_SCORE_DIGITS = 10, MAX_VERSION_DIGITS = 4;
+  var ALPHABET = '0123456789abcdefghjkmnpqrstvwxyz', RADIX = 32;
+  var MODE = /^[a-z0-9_-]{1,24}$/, DIGITS = /^[0-9]+$/;
+  var PACKAGE = /^[A-Za-z][A-Za-z0-9_]*(\.[A-Za-z][A-Za-z0-9_]*)+$/, MAX_PACKAGE = 100;
+  var KINDS = ['challenge', 'result', 'invite'];
+
+  function decodeSeed(text) {
+    if (!text || text.length > MAX_SEED_CHARS) return null;
+    var value = 0, t = text.toLowerCase();
+    for (var i = 0; i < t.length; i++) {
+      var c = t.charAt(i);
+      if (c === 'i' || c === 'l') c = '1'; else if (c === 'o') c = '0';
+      var d = ALPHABET.indexOf(c);
+      if (d < 0) return null;
+      value = value * RADIX + d;  // < 2^50: exact in a double
+    }
+    return value > MAX_SEED ? null : value;
+  }
+
+  function encodeSeed(seed) {
+    if (seed === 0) return ALPHABET.charAt(0);
+    var out = '';
+    for (var rest = seed; rest > 0; rest = Math.floor(rest / RADIX)) out = ALPHABET.charAt(rest % RADIX) + out;
+    return out;
+  }
+
+  function scoreOf(text) {
+    if (text == null || !DIGITS.test(text)) return null;
+    if (text.length > MAX_SCORE_DIGITS) return MAX_SCORE;
+    return Math.min(parseInt(text, 10), MAX_SCORE);
+  }
+
+  // Same rules as ChallengeLink._fromFields. A link that would be rejected
+  // in the app becomes a plain invite here: the page still helps.
+  function parse(search) {
+    var invite = { kind: 'invite', seed: null, mode: null, version: null, score: null, campaign: null };
+    if (search.length > MAX_LINK) return invite;
+    var params, q = {};
+    try { params = new URLSearchParams(search); } catch (e) { return invite; }
+    var repeated = false;
+    params.forEach(function (v, k) { if (Object.prototype.hasOwnProperty.call(q, k)) repeated = true; q[k] = v; });
+    if (repeated) return invite;
+    function field(k) { return Object.prototype.hasOwnProperty.call(q, k) ? q[k] : null; }
+
+    var seedText = field('s'), seed = seedText == null ? null : decodeSeed(seedText);
+    if (seedText != null && seed == null) return invite;
+    var medium = KINDS.indexOf(field('utm_medium')) >= 0 ? field('utm_medium') : null;
+    var kind = medium == null ? (seed == null ? 'invite' : 'challenge')
+      : (medium === 'invite' && seed != null) ? 'challenge'
+      : (medium !== 'invite' && seed == null) ? 'invite' : medium;
+    var version = null;
+    if (seed != null) {
+      var vt = field('v');
+      if (vt == null || vt.length > MAX_VERSION_DIGITS || !DIGITS.test(vt)) return invite;
+      version = parseInt(vt, 10);
+      if (version < 1) return invite;
+    }
+    var mode = field('m');
+    if (mode != null) { mode = mode.toLowerCase(); if (!MODE.test(mode)) return invite; }
+    var campaign = field('utm_campaign');
+    if (campaign != null && (campaign.length > MAX_PACKAGE || !PACKAGE.test(campaign))) campaign = null;
+    return { kind: kind, seed: seed, mode: mode, version: version, score: scoreOf(field('sc')), campaign: campaign };
+  }
+
+  function query(pairs) {
+    return pairs.filter(function (p) { return p[1] != null; })
+      .map(function (p) { return encodeURIComponent(p[0]) + '=' + encodeURIComponent(String(p[1])); }).join('&');
+  }
+
+  function payload(c) {
+    var seed = c.seed == null ? null : encodeSeed(c.seed);
+    return [['s', seed], ['m', c.mode], ['v', c.seed == null ? null : c.version], ['sc', c.score]];
+  }
+
+  // ChallengeLink.referrer + playStoreUri: the order of the fields matters
+  // only for byte equality with the app, not for Play.
+  function playUrl(c) {
+    var referrer = query([['utm_source', 'pikko_share'], ['utm_medium', c.kind], ['utm_campaign', C.pkg],
+      ['utm_content', C.game]].concat(payload(c)));
+    return 'https://play.google.com/store/apps/details?' + query([['id', C.pkg], ['referrer', referrer]]);
+  }
+
+  // The link itself rebuilt from validated fields only, as ChallengeLink.uri.
+  function appLinkQuery(c) {
+    return query(payload(c).concat([['utm_source', 'pikko_share'], ['utm_medium', c.kind],
+      ['utm_campaign', c.campaign || C.pkg]]));
+  }
+
+  // Chrome intent: opens the app when it handles the link, else goes to
+  // browser_fallback_url (the Play listing with the referrer).
+  function intentUrl(c) {
+    var q = appLinkQuery(c);
+    return 'intent://' + C.host + C.path + (q ? '?' + q : '') + '#Intent;scheme=https;package=' + C.pkg +
+      ';S.browser_fallback_url=' + encodeURIComponent(playUrl(c)) + ';end';
+  }
+
+  window.PikkoChallenge = { parse: parse, playUrl: playUrl, intentUrl: intentUrl, encodeSeed: encodeSeed, decodeSeed: decodeSeed };
+  if (!document.getElementById('title')) return;
+
+  var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'en'];
+  var lang = 'en';
+  for (var i = 0; i < langs.length; i++) {
+    var sub = String(langs[i] || '').toLowerCase().split('-')[0];
+    if (Object.prototype.hasOwnProperty.call(S, sub)) { lang = sub; break; }
+  }
+  var T = S[lang];
+  document.documentElement.lang = lang;
+  var name = C.name[lang] || C.name.en;
+  function set(id, text) { document.getElementById(id).textContent = text; }
+
+  var c = parse(location.search.replace(/^\?/, ''));
+  set('game', name);
+  set('title', c.kind === 'invite' ? T.invite.replace('{game}', name) : T[c.kind]);
+  var scoreEl = document.getElementById('score'), sameEl = document.getElementById('same');
+  if (c.score != null) {
+    var shown = String(c.score);
+    try { shown = new Intl.NumberFormat(lang).format(c.score); } catch (e) { /* keep plain digits */ }
+    scoreEl.textContent = T.beat.replace('{score}', shown);
+    scoreEl.hidden = false;
+  }
+  if (c.seed != null) { sameEl.textContent = T.same; sameEl.hidden = false; }
+
+  var ua = navigator.userAgent || '';
+  var android = /Android/i.test(ua);
+  var ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var open = document.getElementById('open'), play = document.getElementById('play');
+  set('open', T.open); set('play', T.play); set('more', T.more);
+  play.href = playUrl(c);
+  if (android) {
+    open.href = intentUrl(c); open.hidden = false;
+    set('note', T.hint);
+  } else if (ios && C.appStore) {
+    open.href = 'https://apps.apple.com/app/id' + C.appStore; open.hidden = false;
+  } else {
+    set('note', ios ? T.ios : T.desktop);
+  }
+})();</script>
+</body>
+</html>
