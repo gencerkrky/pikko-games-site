@@ -54,8 +54,9 @@
   The apps do show ads, and the ad provider (Google AdMob) uses an advertising
   identifier. Some games (currently Ocean Drop, Sudoku, Belote, Canasta, Mancala,
   Nine Men's Morris, Skat, Gin Rummy, Street Food Idle, Honeycomb, Stack Village, Conquest Isles,
-  Killer Sudoku, Item Upgrade: Forge Legend, Penguin Bridges and Pikko Arena) also send crash reports
-  and anonymous usage statistics through Google Firebase, so we can fix bugs.
+  Killer Sudoku, Item Upgrade: Forge Legend and Pikko Arena) also send crash reports
+  and anonymous usage statistics through Google Firebase, so we can fix bugs; Cat &amp; Box
+  and Penguin Bridges send anonymous usage statistics only.
   Ocean Drop's daily ranking sends your Daily Jar score, with a random ID
   that is not linked to you, so it can show where you placed. Pikko Aquarium
   can back up your progress to your own Google Play Games account if you sign
@@ -108,11 +109,13 @@
 <p>
   Ocean Drop, Sudoku, Belote, Canasta, Mancala, Nine Men's Morris, Skat,
   Gin Rummy, Street Food Idle, Honeycomb, Stack Village, Conquest Isles,
-  Killer Sudoku, Item Upgrade: Forge Legend and Penguin Bridges use Google Firebase Crashlytics and Google
+  Killer Sudoku and Item Upgrade: Forge Legend use Google Firebase Crashlytics and Google
   Analytics for Firebase. If a game crashes, a crash report is sent so we can
   find and fix the problem. The games also record simple gameplay events, such
   as a game or run starting or ending, its score, or a power-up or hint being
-  used, so we can see which parts of the game work and which do not.
+  used, so we can see which parts of the game work and which do not. Cat &amp; Box and
+  Penguin Bridges use only Google Analytics for Firebase (the usage statistics in the
+  table below); they send no crash reports.
 </p>
 <table>
   <tr><th>Data</th><th>Purpose</th><th>Shared with</th></tr>
