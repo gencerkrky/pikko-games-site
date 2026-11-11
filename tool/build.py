@@ -23,6 +23,9 @@ GAMES = {
         ('blockpuzzle', 'Wood Block Puzzle', 'Ahşap Blok Bulmaca'),
         ('oceandrop', 'Ocean Drop', 'Ocean Drop'),
         ('petek', 'Honeycomb', 'Honeycomb'),
+        ('kedikutu', 'Cat & Box', 'Kedi & Kutu'),
+        ('penguinslide', 'Penguin Slide', 'Penguin Slide'),
+        ('penguinbridges', 'Penguin Bridges', 'Penguin Bridges'),
     ],
     'card': [
         ('hearts', 'Hearts', 'Hearts'),
@@ -35,6 +38,7 @@ GAMES = {
         ('ginrummy', 'Gin Rummy', 'Gin Rummy'),
     ],
     'board': [
+        ('tavla', 'Backgammon', 'Tavla'),
         ('mancala', 'Mancala', 'Mangala'),
         ('morris', "Nine Men's Morris", 'Dokuz Taş'),
         ('fetih', 'Conquest Isles', 'Conquest Isles'),
@@ -44,6 +48,16 @@ GAMES = {
         ('streetfood', 'Street Food Idle', 'Sokak Lezzetleri'),
         ('koy', 'Stack Village', 'Stack Village'),
     ],
+    'action': [
+        ('reefguard', 'Reef Guard', 'Reef Guard'),
+    ],
+}
+
+# App Store ids of the games live on iPhone (App Store Connect). A game live only on iPhone still gets a
+# download button: its Play page is closed-test only, so only the App Store button shows.
+APP_STORE = {
+    'blockpuzzle': '6820854943',
+    'kedikutu': '6828975976',
 }
 
 SECTIONS = {
@@ -51,6 +65,7 @@ SECTIONS = {
     'card': ('Card games', 'Kart oyunları'),
     'board': ('Board games', 'Tahta oyunları'),
     'idle': ('Relaxing', 'Rahatlatıcı'),
+    'action': ('Action', 'Aksiyon'),
 }
 
 YOUTUBE = 'https://www.youtube.com/@Pikko-Games'
@@ -84,15 +99,22 @@ def live(key):
     return LISTINGS.get(key, {}).get('live', False)
 
 
+def available(key):
+    """Downloadable somewhere: live on Google Play or on the App Store."""
+    return live(key) or key in APP_STORE
+
+
 def card(key, name_en, name_tr):
     lst = LISTINGS[key]
     desc_en = lst['en-US'][1]
     desc_tr = lst.get('tr-TR', lst['en-US'])[1]
     url = f'https://play.google.com/store/apps/details?id=com.pikkogames.{key}'
+    buttons = []
     if live(key):
-        action = f'<a class="btn" href="{url}" rel="noopener">{t("Free download", "Ücretsiz indir")}</a>'
-    else:
-        action = f'<span class="soon">{t("Coming soon", "Yakında")}</span>'
+        buttons.append(f'<a class="btn" href="{url}" rel="noopener">{t("Google Play", "Google Play")}</a>')
+    if key in APP_STORE:
+        buttons.append(f'<a class="btn" href="https://apps.apple.com/app/id{APP_STORE[key]}" rel="noopener">{t("App Store", "App Store")}</a>')
+    action = ' '.join(buttons) if buttons else f'<span class="soon">{t("Coming soon", "Yakında")}</span>'
     return f'''
       <li class="game">
         <img src="assets/icons/{key}.png" alt="" width="72" height="72" loading="lazy">
@@ -116,14 +138,14 @@ def section(title, games, extra=''):
 
 def page():
     # What a visitor can install today comes first; the rest wait by category.
-    now = [g for games in GAMES.values() for g in games if live(g[0])]
+    now = [g for games in GAMES.values() for g in games if available(g[0])]
     sections = []
     if now:
         more = f'''
       <p class="all"><a class="btn ghost" href="{DEV_PAGE}" rel="noopener">{t("All our games on Google Play", "Tüm oyunlarımız Google Play'de")}</a></p>'''
         sections.append(section(('Now on Google Play', "Şimdi Google Play'de"), now, more))
     for sid, games in GAMES.items():
-        soon = [g for g in games if not live(g[0])]
+        soon = [g for g in games if not available(g[0])]
         if soon:
             sections.append(section((f'{SECTIONS[sid][0]} · coming soon', f'{SECTIONS[sid][1]} · yakında'), soon))
     total = sum(len(g) for g in GAMES.values())
