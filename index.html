@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pikko Games</title>
-<meta name="description" content="Pikko Games makes calm, fair card, board and puzzle games for Android. Every game plays offline.">
+<meta name="description" content="Pikko Games makes calm, fair card, board and puzzle games for Android and iPhone. Every game plays offline.">
 <meta property="og:title" content="Pikko Games">
-<meta property="og:description" content="Calm, fair card, board and puzzle games for Android. Every game plays offline.">
+<meta property="og:description" content="Calm, fair card, board and puzzle games for Android and iPhone. Every game plays offline.">
 <meta property="og:image" content="https://gencerkrky.github.io/pikko-games-site/assets/og.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -81,6 +81,15 @@
   .ghost { background: transparent; color: var(--brand); border: 2px solid var(--brand); }
   .ghost:hover { background: var(--brand); color: var(--brand-ink); filter: none; }
   .all { text-align: center; margin: 1.25rem 0 0; }
+  .stores { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .store {
+    display: inline-flex; align-items: center; gap: .5rem; background: #0b0b12; color: #fff; text-decoration: none;
+    border: 1px solid #3a3a4a; border-radius: 10px; padding: .35rem .8rem .35rem .6rem; line-height: 1.05;
+  }
+  .store:hover { border-color: var(--brand); }
+  .store span { display: flex; flex-direction: column; }
+  .store small { font-size: .62rem; letter-spacing: .02em; opacity: .85; }
+  .store b { font-size: .98rem; }
   .soon { display: inline-block; background: var(--chip); color: var(--muted); font-weight: 600; font-size: .85rem; padding: .4rem .85rem; border-radius: 999px; }
   footer { border-top: 1px solid var(--line); padding: 2rem 0 3rem; text-align: center; color: var(--muted); font-size: .92rem; }
   footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.5rem; margin-bottom: .75rem; }
@@ -100,7 +109,7 @@
   <div class="hero">
     <img src="assets/logo.png" alt="Pikko Games" width="480" height="305">
     <h1><span lang="en">Calm, fair card, board and puzzle games</span><span lang="tr">Sakin ve adil kart, tahta ve bulmaca oyunları</span></h1>
-    <p><span lang="en">Made for Android. Clear rules, computer opponents that play fair, and no account to create.</span><span lang="tr">Android için. Kurallar açık, bilgisayar rakipler hile yapmaz, hesap açman gerekmez.</span></p>
+    <p><span lang="en">For Android and iPhone. Clear rules, computer opponents that play fair, and no account to create.</span><span lang="tr">Android ve iPhone için. Kurallar açık, bilgisayar rakipler hile yapmaz, hesap açman gerekmez.</span></p>
     <ul class="facts">
       <li><span lang="en">20 games on Google Play</span><span lang="tr">Google Play'de 20 oyun</span></li>
       <li><span lang="en">4 more coming</span><span lang="tr">4 oyun yolda</span></li>
@@ -112,14 +121,14 @@
   </div>
 
     <section>
-      <h2><span lang="en">Now on Google Play</span><span lang="tr">Şimdi Google Play&#x27;de</span></h2>
+      <h2><span lang="en">Download now</span><span lang="tr">Şimdi indir</span></h2>
       <ul class="games">
       <li class="game">
         <img src="assets/icons/sudoku.png" alt="" width="72" height="72" loading="lazy">
         <div class="body">
           <h3><span lang="en">Sudoku</span><span lang="tr">Sudoku</span></h3>
           <p><span lang="en">Easy sudoku to expert, large print digits, no internet needed. Daily puzzle.</span><span lang="tr">Kolay sudokudan ustaya: büyük rakamlar, internetsiz oyun, her gün yeni bulmaca.</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.sudoku" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.sudoku" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -127,7 +136,7 @@
         <div class="body">
           <h3><span lang="en">Killer Sudoku</span><span lang="tr">Killer Sudoku</span></h3>
           <p><span lang="en">Killer sudoku with cage sums, one solution and hints that explain each step.</span><span lang="tr">Kafes toplamlı Killer Sudoku: tek çözüm, her adımı açıklayan ipuçları.</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.killersudoku" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.killersudoku" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -135,7 +144,7 @@
         <div class="body">
           <h3><span lang="en">Wood Block Puzzle</span><span lang="tr">Ahşap Blok Bulmaca</span></h3>
           <p><span lang="en">Wood block sudoku puzzle, 9x9, offline. Fair draw, free undo, friend challenges.</span><span lang="tr">Ahşap blok sudoku ve blok bulmaca: 9x9, internetsiz, arkadaşına meydan oku.</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.blockpuzzle" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a> <a class="btn" href="https://apps.apple.com/app/id6820854943" rel="noopener"><span lang="en">App Store</span><span lang="tr">App Store</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.blockpuzzle" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a><a class="store" href="https://apps.apple.com/app/id6820854943" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.9-1.1-2.9-4.1zM13.9 5.1c.7-.9 1.2-2 1-3.2-1 .1-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg><span><small><span lang="en">Download on the</span><span lang="tr">HEMEN İNDİR</span></small><b>App Store</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -143,7 +152,7 @@
         <div class="body">
           <h3><span lang="en">Ocean Drop</span><span lang="tr">Ocean Drop</span></h3>
           <p><span lang="en">Merge puzzle: drop cute sea animals, merge two of a kind, grow a whale!</span><span lang="tr">Birleştirme bulmacası: deniz canlılarını bırak, eşleri birleştir, balina yap!</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.oceandrop" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.oceandrop" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -151,7 +160,7 @@
         <div class="body">
           <h3><span lang="en">Honeycomb</span><span lang="tr">Honeycomb</span></h3>
           <p><span lang="en">Hex logic puzzles on a honeycomb grid. Every puzzle solvable without guessing.</span><span lang="tr">Petek üzerinde altıgen mantık bulmacaları. Her biri tahmin etmeden çözülür.</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.petek" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.petek" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -159,7 +168,7 @@
         <div class="body">
           <h3><span lang="en">Cat &amp; Box</span><span lang="tr">Kedi &amp; Kutu</span></h3>
           <p><span lang="en">Help every cat find its box! Cozy cat logic puzzles with one simple rule.</span><span lang="tr">Her kediye kutusunu bul! Tek kurallı, sevimli kedili mantık bulmacaları.</span></p>
-          <a class="btn" href="https://apps.apple.com/app/id6828975976" rel="noopener"><span lang="en">App Store</span><span lang="tr">App Store</span></a>
+          <div class="stores"><a class="store" href="https://apps.apple.com/app/id6828975976" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.9-1.1-2.9-4.1zM13.9 5.1c.7-.9 1.2-2 1-3.2-1 .1-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg><span><small><span lang="en">Download on the</span><span lang="tr">HEMEN İNDİR</span></small><b>App Store</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -167,7 +176,7 @@
         <div class="body">
           <h3><span lang="en">Hearts</span><span lang="tr">Hearts</span></h3>
           <p><span lang="en">Classic Hearts card game offline. Fair AI can&#x27;t see your cards. Daily Deal.</span><span lang="tr">İnternetsiz Maça Kızı (Hearts) kart oyunu. Rakipler kartını görmez. Günün Eli.</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.hearts" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.hearts" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -175,7 +184,7 @@
         <div class="body">
           <h3><span lang="en">Spades</span><span lang="tr">Spades</span></h3>
           <p><span lang="en">Classic Spades card game offline. Bid, go nil, dodge bags. Fair AI partner.</span><span lang="tr">İnternetsiz Spades, Koz Maça Batak gibi: eşli, sıfır, torba. Rakip elini görmez.</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.spades" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.spades" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -183,7 +192,7 @@
         <div class="body">
           <h3><span lang="en">Euchre</span><span lang="tr">Euchre</span></h3>
           <p><span lang="en">Classic Euchre card game offline. Bowers, loners, stick the dealer. Fair AI.</span><span lang="tr">İnternetsiz Euchre kart oyunu: bower, tek gitme, eşli oyun. Rakip elini görmez.</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.euchre" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.euchre" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -191,7 +200,7 @@
         <div class="body">
           <h3><span lang="en">Cribbage</span><span lang="tr">Cribbage</span></h3>
           <p><span lang="en">Classic Cribbage offline with a pegging board. The AI cannot see your hand.</span><span lang="tr">Klasik Cribbage, internetsiz. Sayı tahtası, açıklamalı sayım. Elini göremez.</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.cribbage" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.cribbage" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -199,7 +208,7 @@
         <div class="body">
           <h3><span lang="en">Belote</span><span lang="tr">Belote</span></h3>
           <p><span lang="en">Classic French Belote card game, offline. Fair AI partner and a Daily Deal.</span><span lang="tr">Klasik Fransız Belote kart oyunu, internetsiz. Her gün yeni dağıtım.</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.belote" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.belote" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -207,7 +216,7 @@
         <div class="body">
           <h3><span lang="en">Skat</span><span lang="tr">Skat</span></h3>
           <p><span lang="en">German Skat card game, offline. International rules, fair AI and a Daily Deal.</span><span lang="tr">Üç kişilik klasik Alman kart oyunu Skat, internetsiz. Uluslararası kurallar.</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.skat" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.skat" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -215,7 +224,7 @@
         <div class="body">
           <h3><span lang="en">Gin Rummy</span><span lang="tr">Gin Rummy</span></h3>
           <p><span lang="en">Classic Gin Rummy card game, offline. Knock, gin, undercut. Fair AI, Daily Deal.</span><span lang="tr">İki kişilik klasik Gin Rummy kart oyunu, çevrimdışı. Kapat, gin yap.</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.ginrummy" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.ginrummy" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -223,7 +232,7 @@
         <div class="body">
           <h3><span lang="en">Backgammon</span><span lang="tr">Tavla</span></h3>
           <p><span lang="en">Classic backgammon &amp; tavla vs a fair computer. Sealed dice you can check.</span><span lang="tr">Klasik tavla ve backgammon, adil bilgisayara karşı. Mühürlü, kontrol edilen zar.</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.tavla" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.tavla" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -231,7 +240,7 @@
         <div class="body">
           <h3><span lang="en">Mancala</span><span lang="tr">Mangala</span></h3>
           <p><span lang="en">Classic mancala with Kalah rules, offline. Play the computer or a friend.</span><span lang="tr">Klasik Kalah kurallarıyla mangala, internetsiz: bilgisayara karşı ya da 2 kişi.</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.mancala" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.mancala" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -239,7 +248,7 @@
         <div class="body">
           <h3><span lang="en">Nine Men&#x27;s Morris</span><span lang="tr">Dokuz Taş</span></h3>
           <p><span lang="en">The classic mill game (Mills), offline. Play the computer or a friend.</span><span lang="tr">Klasik Dokuz Taş (Değirmen): bilgisayara karşı ya da iki kişi tek telefonda.</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.morris" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.morris" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -247,7 +256,7 @@
         <div class="body">
           <h3><span lang="en">Conquest Isles</span><span lang="tr">Conquest Isles</span></h3>
           <p><span lang="en">Offline island conquest strategy with fair luck and an AI that never cheats.</span><span lang="tr">Çevrimdışı ada fethi: adil şans, asla hile yapmayan bir yapay zekâ.</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.fetih" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.fetih" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -255,7 +264,7 @@
         <div class="body">
           <h3><span lang="en">Pikko Aquarium</span><span lang="tr">Pikko Aquarium</span></h3>
           <p><span lang="en">A calm idle aquarium: collect 45 real fish, evolve them and decorate your reef.</span><span lang="tr">Sakin bir boşta akvaryum: 45 gerçek balık topla, evrimleştir, resifini süsle.</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.reef" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.reef" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -263,7 +272,7 @@
         <div class="body">
           <h3><span lang="en">Street Food Idle</span><span lang="tr">Sokak Lezzetleri</span></h3>
           <p><span lang="en">Idle cooking tycoon: build street food stalls, serve the rush, earn offline.</span><span lang="tr">Idle yemek tycoon: sokak lezzeti tezgâhları kur, yoğun saati yetiştir.</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.streetfood" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.streetfood" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a></div>
         </div>
       </li>
       <li class="game">
@@ -271,7 +280,7 @@
         <div class="body">
           <h3><span lang="en">Stack Village</span><span lang="tr">Stack Village</span></h3>
           <p><span lang="en">Stack cards to gather, craft and build a cozy village of cute Pikkos.</span><span lang="tr">Kartları üst üste koy: topla, üret ve sevimli Pikko&#x27;lara bir köy kur.</span></p>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.pikkogames.koy" rel="noopener"><span lang="en">Google Play</span><span lang="tr">Google Play</span></a>
+          <div class="stores"><a class="store" href="https://play.google.com/store/apps/details?id=com.pikkogames.koy" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#00f076" d="M17 8.7 13.7 12 3.6 1.8c.3-.2.8-.2 1.2 0L17 8.7z"/><path fill="#ff3a44" d="M17 15.3 4.8 22.2c-.4.2-.9.2-1.2 0L13.7 12l3.3 3.3z"/><path fill="#ffd400" d="m20.8 10.8-3.8-2.1L13.7 12l3.3 3.3 3.8-2.1c.9-.5.9-1.9 0-2.4z"/></svg><span><small><span lang="en">GET IT ON</span><span lang="tr">HEMEN İNDİR</span></small><b>Google Play</b></span></a></div>
         </div>
       </li>
       </ul>
