@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'sha256-RpH8txX9Mgh/PB5usWG58z9vm3ThOruTUnPLRbadKdQ='; script-src 'sha256-qCf8cFTArrX94oolXMxAV2gkgbYx8Pe0LLuDXqtDj1k='; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light dark">
+<title>Sudoku - Pikko Games</title>
+<meta property="og:title" content="Sudoku">
+<meta property="og:image" content="https://gencerkrky.github.io/pikko-games-site/assets/icons/sudoku.png">
+<link rel="icon" href="/pikko-games-site/assets/favicon.png">
+<style>:root{--bg:#f6f3ff;--bg2:#e6e0ff;--card:#fff;--ink:#161b48;--muted:#5d5f80;--brand:#5a4ad0;--brand-ink:#fff;--line:#d9d2fa}
+@media (prefers-color-scheme:dark){:root{--bg:#12132a;--bg2:#1d1b40;--card:#1c1d3a;--ink:#eceaff;--muted:#b4b3d6;--brand:#9d90ff;--brand-ink:#10112a;--line:#34336a}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--ink);background:linear-gradient(180deg,var(--bg),var(--bg2)) fixed;font:16px/1.5 "Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px}
+main{width:100%;max-width:26rem;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px 20px;text-align:center}
+.icon{width:96px;height:96px;border-radius:22px;display:block;margin:0 auto 12px}
+h1{margin:.25rem 0 1rem;font-size:1.5rem;line-height:1.25}
+.btn{display:block;width:100%;padding:14px 16px;margin:10px 0 0;border-radius:14px;font-weight:700;text-decoration:none;border:2px solid var(--brand);background:var(--brand);color:var(--brand-ink)}
+.btn:focus-visible,footer a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+footer{margin-top:1.25rem;font-size:.9rem}
+footer a{color:var(--muted)}
+[hidden]{display:none!important}</style>
+</head>
+<body>
+<main>
+<img class="icon" src="/pikko-games-site/assets/icons/sudoku.png" width="96" height="96" alt="">
+<h1 id="name">Sudoku</h1>
+<p id="soon" hidden></p>
+<a class="btn" id="play" href="#" rel="noopener" hidden>Get it on Google Play</a>
+<a class="btn" id="apple" href="#" rel="noopener" hidden>Download on the App Store</a>
+<footer><a id="more" href="/pikko-games-site/">More Pikko games</a></footer>
+</main>
+<script type="application/json" id="cfg">{"name": {"en": "Sudoku", "tr": "Sudoku"}, "play": "https://play.google.com/store/apps/details?id=com.pikkogames.sudoku&referrer=utm_source%3Dinstagram%26utm_medium%3Dstory%26utm_campaign%3Dsudoku", "appStore": ""}</script>
+<script>(function () {
+  var C = JSON.parse(document.getElementById('cfg').textContent);
+  var tr = /^tr\b/i.test(navigator.language || '');
+  var ua = navigator.userAgent || '';
+  // iPadOS reports a Mac user agent; touch support tells them apart.
+  var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var android = /Android/.test(ua);
+  var name = tr ? (C.name.tr || C.name.en) : C.name.en;
+  document.title = name + ' - Pikko Games';
+  document.getElementById('name').textContent = name;
+  var play = document.getElementById('play'), apple = document.getElementById('apple');
+  play.textContent = tr ? "Google Play'den indir" : 'Get it on Google Play';
+  apple.textContent = tr ? "App Store'dan indir" : 'Download on the App Store';
+  document.getElementById('more').textContent = tr ? 'Diğer Pikko oyunları' : 'More Pikko games';
+  // A phone only ever sees its own store; a desktop sees every store the game is on.
+  if (C.play && !ios) { play.href = C.play; play.hidden = false; }
+  if (C.appStore && !android) { apple.href = C.appStore; apple.hidden = false; }
+  // replace() keeps this page out of history, so Back returns to Instagram.
+  var target = android ? C.play : ios ? C.appStore : '';
+  if (target) { location.replace(target); return; }
+  if ((android && !C.play) || (ios && !C.appStore)) {
+    var soon = document.getElementById('soon');
+    soon.textContent = tr ? (ios ? "Yakında iPhone'da." : "Yakında Android'de.") : (ios ? 'Coming soon to iPhone.' : 'Coming soon to Android.');
+    soon.hidden = false;
+  }
+})();</script>
+</body>
+</html>
